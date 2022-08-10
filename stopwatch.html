@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STOPWATCH</title>
+	<link rel="stylesheet" type="text/css" href="stopwatch.css">
+</head>
+<body>
+	<center>
+	<h1>A STOP WATCH</h1>
+	<div id="box1">
+		<span style="font-size: 4vw" id="first">00</span>
+		<span style="font-size: 4vw">:</span>
+		<span style="font-size: 4vw" id="second">00</span>
+		<span style="font-size: 4vw">:</span>
+		<span style="font-size: 4vw" id="third">00</span>
+		<span style="font-size: 4vw">.</span>
+		<span style="font-size: 2vw;" id="fourth">00</span>
+		<br><br>
+		<button onclick="clickMe()" class="but">START</button>
+		<button onclick="stopMe()" class="but">SPLIT</button>
+		<button onclick="pauseMe()" class="but">PAUSE</button>
+	</div>
+	<br>
+	<div id="display"></div>
+	<br>
+	<!-- <div id="mar"><marquee>Just Imagine this superb and fantastic Stopwatch.  It can be used in many aspects of Socialism like Football etc</marquee></div> -->
+</center>
+
+	<script type="text/javascript">
+		var myVar;
+		function clickMe() {
+			myVar = setInterval(startMe, 10);
+		}
+		function startMe() {
+			var minisec = fourth.innerHTML;
+			minisec++;
+			fourth.innerHTML = minisec;
+			var secs = third.innerHTML;
+			var mins = second.innerHTML;
+			var hrs = first.innerHTML;
+			if (minisec > 99) {
+				fourth.innerHTML = "0"
+				secs++;
+				third.innerHTML = secs;
+
+				if (secs > 59) {
+				third.innerHTML = "00";
+				mins++;
+				second.innerHTML = mins;
+				}
+			}
+			
+			if (mins > 59) {
+				second.innerHTML = "00";
+				hrs++;
+				first.innerHTML = hrs;
+				if (hrs > 23) {
+					first.innerHTML = "00";
+				}
+			}
+		}
+
+		function pauseMe() {
+			clearInterval(myVar);
+		}
+
+		function stopMe() {
+			var output = first.innerHTML + ":" + second.innerHTML + ":" + third.innerHTML + "." + fourth.innerHTML;
+			display.innerHTML += output+'<br>';
+		}
+	</script>
+</body>
+</html>
