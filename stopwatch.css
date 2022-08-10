@@ -1,0 +1,26 @@
+#box1{
+	width: 400px;
+	height: 200px;
+	background-color: violet;
+	border-radius: 200px;
+	font-family: arial;
+}
+.but{
+	background-color: orange;
+	font-family: cursive;
+	border: none;
+}
+#display{
+	width: 150px;
+	height: 50px;
+	font-family: cursive;
+	background-color: white;
+	margin-top: -90px;
+	overflow-y: scroll;
+}
+#mar{
+	width: 150px;
+	height: 30px;
+	font-family: arial;
+	font-size: 20px;
+}
